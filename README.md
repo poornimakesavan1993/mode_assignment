@@ -67,6 +67,6 @@ FORECAST IMPLEMENTATION:
 
 CI INTEGRATION
 ==============
-
+1. Since it is an integration to existing build platform, considering jenkins and pytest for integration
 
 	
