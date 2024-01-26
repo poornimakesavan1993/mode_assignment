@@ -63,8 +63,6 @@ FORECAST IMPLEMENTATION:
 
 6. Introducing a function inside a weather forecast class with above mentioned calculation will result the necessary data
 7. For 16 days forecast, startdate and enddate along with timezone parameter customization can be done to get the data
-
-
 CI INTEGRATION
 ==============
 1. Since it is an integration to existing build platform, considering circleCI and pytest for integration
@@ -78,7 +76,7 @@ jobs:
     docker:
       - image: circleci/python:3.11
 
-    working_directory: ~/repo
+    working_directory: mode_assignment
 
     steps:
       # Step 1: obtain repo from GitHub
@@ -89,7 +87,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt
+            pip install requests
       # Step 3: run linter and tests
       - run:
           name: run tests
@@ -98,4 +96,7 @@ jobs:
             flake8 --exclude=venv* --statistics
             pytest -v --cov=calculator
 
-	
+5. Commit config.yml file into the working directory
+6. Setup the project the circleCI from Git active repo
+7. Check the pipeline has been created as successfully as its status
+8. Initiating a pull request through circleCI will be redirected to the project dashboards
