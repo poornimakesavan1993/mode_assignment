@@ -67,6 +67,35 @@ FORECAST IMPLEMENTATION:
 
 CI INTEGRATION
 ==============
-1. Since it is an integration to existing build platform, considering jenkins and pytest for integration
+1. Since it is an integration to existing build platform, considering circleCI and pytest for integration
+2. Create a new repository and commit the scripts into it
+3. YAML config file to be created with mappings, scalars.etc.,
+4. config.yml file,
+# Python CircleCI 2.0 configuration file
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.11
+
+    working_directory: ~/repo
+
+    steps:
+      # Step 1: obtain repo from GitHub
+      - checkout
+      # Step 2: create virtual env and install dependencies
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+      # Step 3: run linter and tests
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            flake8 --exclude=venv* --statistics
+            pytest -v --cov=calculator
 
 	
