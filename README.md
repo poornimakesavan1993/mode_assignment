@@ -32,7 +32,7 @@ Completed assignment and updated README
 	
 	
 NOTE:	1. Latitude and Longtitude are configured for "Toronto". Each day average has been calculated from hourly data aggregation and overall past 5 days average has been calculated from daily data summary.
-	2. Hourly temperature average has been calculated from MM-DD-YYYY 00:00:00 till MM-DD-YYYY 23:00:00 which is having slight difference(mostly less than a kelvin unit eg: 0.75 K) with day summary temperature. If these values aren't 	negligible then it is considered to be bug. Since, this difference is present, verification of average is not possible to implement now
+	2. Hourly temperature average has been calculated from MM-DD-YYYY 00:00:00 till MM-DD-YYYY 23:00:00 which is having slight difference(mostly less than a kelvin unit eg: 0.75 K) with day summary temperature. If these values aren't negligible then it is considered to be bug. Since, this difference is present, verification of average is not possible to implement now
 	3. Since, API end point of hourly data returns data for specific hour, we need to run get response for all 24 intervals differently. So, this concludes 5*24=120 get requests to get data. The execution time is linear due to this 	scenario
 	4. Instead of trying another 120 set get requests, the most recurring weather condition has been reported from get response of hourly data aggregation. Please execute get_aggregated_hourly_weatherdata and 	get_frequent_weather_condition methods together.
 
