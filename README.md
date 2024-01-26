@@ -63,8 +63,10 @@ FORECAST IMPLEMENTATION:
 
 6. Introducing a function inside a weather forecast class with above mentioned calculation will result the necessary data
 7. For 16 days forecast, startdate and enddate along with timezone parameter customization can be done to get the data
+   
 CI INTEGRATION
 ==============
+
 1. Since it is an integration to existing build platform, considering circleCI and pytest for integration
 2. Create a new repository and commit the scripts into it
 3. YAML config file to be created with mappings, scalars.etc.,
